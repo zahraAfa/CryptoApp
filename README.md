@@ -11,7 +11,7 @@
 
 ## Features
 
-- [x] Home
+- [x] Live Prices
 - [x] Portfolio
 
 
