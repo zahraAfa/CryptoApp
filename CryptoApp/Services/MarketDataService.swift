@@ -23,8 +23,6 @@ class MarketDataService {
         ServiceManager.shared.execute(URLRequest(url: url), expacting: GlobalData.self) { result in
             switch result{
             case .success(let model):
-                print("Success")
-                print(result)
                 self.marketData = model.data
                 break
             case .failure(let error):

@@ -12,7 +12,7 @@ struct CoinImageView: View {
     var imageUrl: String
     
     var body: some View {
-        imageView.frame(width: 30, height: 30)
+        imageView
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
     }
 }

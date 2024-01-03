@@ -28,8 +28,8 @@ struct SearchBarView: View {
                             .padding(.trailing)
                             .foregroundColor(.theme.accent)
                             .onTapGesture {
-                                UIApplication.shared.endEditing()
                                 searchText = ""
+                                UIApplication.shared.endEditing()
                             }
                     }
                     
