@@ -38,7 +38,7 @@ class CoinModel: Identifiable, Codable{
     let currentHoldings: Double?
     
 //    enum CodingKeys: String, CodingKey{
-//        
+//
 //    }
     
     init(id: String, symbol: String, name: String, image: String, currentPrice: Double, marketCap: Double?, marketCapRank: Double?, fullyDilutedValuation: Double?, totalVolume: Double?, high24H: Double?, low24H: Double?, priceChange24H: Double?, priceChangePercentage24H: Double?, marketCapChange24H: Double?, marketCapChangePercentage24H: Double?, circulatingSupply: Double?, totalSupply: Double?, maxSupply: Double?, ath: Double?, athChangePercentage: Double?, athDate: String, atl: Double?, atlChangePercentage: Double?, atlDate: String, lastUpdated: String, sparklineIn7D: SparklineIn7D, priceChangePercentage24HInCurrency: Double?, currentHoldings: Double?) {
@@ -111,8 +111,4 @@ class CoinModel: Identifiable, Codable{
     var rank : Int {
         return Int(marketCapRank ?? 0)
     }
-}
-
-struct SparklineIn7D: Codable {
-    let price : [Double]
 }

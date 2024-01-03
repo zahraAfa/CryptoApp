@@ -16,6 +16,12 @@ extension PreviewProvider {
 
 class DeveloperPreview{
     static let instance = DeveloperPreview()
+    
+    
+    let state1 = StatisticModel(title: "Market Cap", value: "Rp. 12M", percentageChange: 25.34)
+    let state2 = StatisticModel(title: "Total Volume", value: "Rp. 1.76Tr", percentageChange: nil)
+    let state3 = StatisticModel(title: "Portfolio Value", value: "Rp. 50.3M", percentageChange: -12.34)
+    
     private init(){
         
     }
