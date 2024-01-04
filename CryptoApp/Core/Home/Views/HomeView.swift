@@ -16,10 +16,19 @@ struct HomeView: View {
             Color.theme.background.ignoresSafeArea()
             VStack{
                 homeHeader
+                HomeStatsView(showPortfolio: $showPortfolio)
+                SearchBarView(searchText: $viewModel.searchText)
                 
                 columnTitles
                 
                 if !showPortfolio{
+                    if viewModel.allCoins.isEmpty{
+                        Text("No coin available.")
+                            .font(.callout).italic()
+                            .foregroundStyle(Color.theme.secondaryText)
+                            .padding()
+                            .frame(alignment: .center)
+                    }
                     allCoinsList
                     .transition(.move(edge: .leading))
                 }
@@ -28,7 +37,6 @@ struct HomeView: View {
                     portfolioCoinsList
                         .transition(.move(edge: .trailing))
                 }
-                
                 
                 Spacer()
             }
@@ -62,13 +70,13 @@ extension HomeView{
     }
     
     private var allCoinsList: some View{
-        List{
-            ForEach(viewModel.allCoins){ coin in
-                CoinRowView(coin: coin, showHoldingsColumn: false)
-                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            List{
+                ForEach(viewModel.allCoins){ coin in
+                    CoinRowView(coin: coin, showHoldingsColumn: false)
+                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                }
             }
-        }
-        .listStyle(PlainListStyle())
+            .listStyle(PlainListStyle())
     }
     
     private var portfolioCoinsList: some View{
