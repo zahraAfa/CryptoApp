@@ -13,6 +13,7 @@ struct XMarkButton: View {
     var body: some View {
         Button(action: {
             presentationMode.wrappedValue.dismiss()
+            print("pressed exit")
         }, label: {
             Image(systemName: "xmark")
                 .font(.headline)
